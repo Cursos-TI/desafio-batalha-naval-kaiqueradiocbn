@@ -11,19 +11,21 @@ int main() {
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
     char linha [10] = {'A', 'B', 'C', 'D', 'E', 'F','G', 'H', 'I', 'J'}; //ARRAY PARA IDENTIFICAR AS COLUNAS
-    
-    int tabuleiro[10][10] = {
-        
+    int tabuleiro[10][10] = {0}; // Matriz Tabuleiro
 
+    //Exibindo Tabuleiro
+    printf("Tabuleiro de batalha Naval.\n");
+    printf("%c", linha);
+    for ( int i = 0; i < 10; i++){
+    for ( int j = 0; j < 10; j++) {
+    printf ("%d", tabuleiro[i][j]);
+    }
+    printf("\n");
+    }
 
 
   
 
-
-
-
-
-    }
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
