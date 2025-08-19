@@ -14,14 +14,23 @@ int main() {
     int tabuleiro[10][10] = {0}; // Matriz Tabuleiro
 
     //Exibindo Tabuleiro
-    printf("Tabuleiro de batalha Naval.\n");
-    printf("%c", linha);
-    for ( int i = 0; i < 10; i++){
+
+    printf("Tabuleiro de batalha Naval.\n"); // ANUNCIO DO JOGO
+    for ( int l = 0; l < 10; l++){ // LOOP FOR PARA IMPRESSÃO DAS LETRAS PARA LOCALIZAÇÃO
+        printf("%c ", linha[l]);
+        }
+
+        printf("\n"); // PULAR LINHA DEPOIS DA LOCALIZAÇÃO
+
+
+    for ( int i = 0; i < 10; i++){   // LOOP FOR PARA A IMPRESSÃO DO TABULEIRO 
     for ( int j = 0; j < 10; j++) {
-    printf ("%d", tabuleiro[i][j]);
+    printf ("%d ", tabuleiro[i][j]);
     }
     printf("\n");
     }
+
+
 
 
   
