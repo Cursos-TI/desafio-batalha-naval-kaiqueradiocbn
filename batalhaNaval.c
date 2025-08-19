@@ -12,6 +12,9 @@ int main() {
 
     char linha[10] = {'A','B','C','D','E','F','G','H','I','J'}; // ARRAY PARA IDENTIFICAR AS COLUNAS
     int tabuleiro[10][10] = {0}; // Matriz Tabuleiro
+    int navioVertical [3] = {3,3,3}; // Array Navio 1
+    int navioHorizontal [3] = {3,3,3}; // Array Navio 2
+
 
     printf("Tabuleiro de batalha naval:\n");
 
@@ -23,7 +26,25 @@ printf("  "); // Espaço inicial para alinhar com os números da lateral
     }
     printf("\n"); // Pular linha se não os numeros começaram na mesma linha que as vogais
 
-    // Loop para imprimir o tabuleiro com números na lateral
+
+            // Navio 1 Horizontal
+
+    int linha0 = 0;
+    int colunaG = 6;
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linha0][colunaG + i] = navioHorizontal[i];
+    }
+
+        // Navio 2 Vertical
+
+    int linha2 = 2;
+    int colunaj = 9;
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linha2 + i][colunaj] = navioVertical[i];
+    }
+
+
+        // Loop para imprimir o tabuleiro com números na lateral
     for (int i = 0; i < 10; i++) {
         printf("%d ", i); // número da linha
         for (int j = 0; j < 10; j++) {
@@ -32,6 +53,34 @@ printf("  "); // Espaço inicial para alinhar com os números da lateral
         }
         printf("\n");
     }
+
+
+
+        // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
+    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
+    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
+    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+
+    // Nível Mestre - Habilidades Especiais com Matrizes
+    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
+    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
+    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+
+    // Exemplos de exibição das habilidades:
+    // Exemplo para habilidade em cone:
+    // 0 0 1 0 0
+    // 0 1 1 1 0
+    // 1 1 1 1 1
+    
+    // Exemplo para habilidade em octaedro:
+    // 0 0 1 0 0
+    // 0 1 1 1 0
+    // 0 0 1 0 0
+
+    // Exemplo para habilidade em cruz:
+    // 0 0 1 0 0
+    // 1 1 1 1 1
+    // 0 0 1 0 0
 
     return 0;
 }
