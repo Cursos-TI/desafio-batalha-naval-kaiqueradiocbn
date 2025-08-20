@@ -76,9 +76,9 @@ printf("  "); // Espaço inicial para alinhar com os números da lateral
 //_________________________________________________________________________________________________________________________
         // Loop para imprimir o tabuleiro com números na lateral
 
-    for (int i = 0; i < COLUNAS; i++) {
+    for (int i = 0; i < LINHAS; i++) {
             printf ("%d ", i); // Imprimi a Coluna Numerica
-        for( int j = 0; j < LINHAS; j++){
+        for( int j = 0; j < COLUNAS; j++){
             printf ("%d ", tabuleiro[i][j]);
 
            
