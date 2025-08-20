@@ -12,6 +12,10 @@ int main() {
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
+    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
+    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
+    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
+    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
 
     char linha[10] = {'A','B','C','D','E','F','G','H','I','J'}; // ARRAY PARA IDENTIFICAR AS COLUNAS
     int tabuleiro[LINHAS][COLUNAS] = {0}; // Matriz Tabuleiro com definidos no inicio
@@ -49,16 +53,35 @@ printf("  "); // Espaço inicial para alinhar com os números da lateral
     for (int i = 0; i < 3; i++) {
         tabuleiro[linha2 + i][colunaj] = navioVertical[i];
     }
+//_________________________________________________________________________________________________________________________
 
+    // Navio 3 Diagonal 1
+
+    int linha5 = 5;
+    int colunaE = 4;
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linha5 + i][colunaE + i] = navioDiagonal1[i];
+    }
+
+    //____________________________________________________________________________________________________________________
+
+        // Navio 4 Diagonal 2
+
+    int linha7 = 7;
+    int colunaD = 3;
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linha7 + i][colunaD - i] = navioDiagonal2[i];
+
+    }
 //_________________________________________________________________________________________________________________________
         // Loop para imprimir o tabuleiro com números na lateral
 
-    for (int i = 0; i < LINHAS; i++) {
-        for( int j = 0; j < COLUNAS; j++){
-
-            soma++;
-            tabuleiro[i][j] = soma;
+    for (int i = 0; i < COLUNAS; i++) {
+            printf ("%d ", i); // Imprimi a Coluna Numerica
+        for( int j = 0; j < LINHAS; j++){
             printf ("%d ", tabuleiro[i][j]);
+
+           
         }
             
         
@@ -67,10 +90,7 @@ printf("  "); // Espaço inicial para alinhar com os números da lateral
 //__________________________________________________________________________________________________________________________
 
 
-        // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
