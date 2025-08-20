@@ -3,30 +3,36 @@
 // Desafio Batalha Naval - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
+#define LINHAS 10
+#define COLUNAS 10
 
 int main() {
+//____________________________________________________________________________________________________________________
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
     char linha[10] = {'A','B','C','D','E','F','G','H','I','J'}; // ARRAY PARA IDENTIFICAR AS COLUNAS
-    int tabuleiro[10][10] = {0}; // Matriz Tabuleiro
+    int tabuleiro[LINHAS][COLUNAS] = {0}; // Matriz Tabuleiro com definidos no inicio
+    int soma = 0; // RESULTADO DA LINHA + COLUNA PARA DAR O TABULEIRO
     int navioVertical [3] = {3,3,3}; // Array Navio 1
     int navioHorizontal [3] = {3,3,3}; // Array Navio 2
+    int navioDiagonal1 [3] = {3,3,3}; // Array Navio 3
+    int navioDiagonal2 [3] = {3,3,3}; // Array Navio 3
 
-
+//________________________________________________________________________________________________________________________   
     printf("Tabuleiro de batalha naval:\n");
-
+//________________________________________________________________________________________________________________________
     // Imprime as letras da linha de cima (colunas)
 
 printf("  "); // Espaço inicial para alinhar com os números da lateral
-    for (int l = 0; l < 10; l++) {  
-        printf("%c ", linha[l]);
+    for (int i = 0; i < 10; i++) {  
+        printf("%c ", linha[i]);
     }
     printf("\n"); // Pular linha se não os numeros começaram na mesma linha que as vogais
 
-
+//_________________________________________________________________________________________________________________________
             // Navio 1 Horizontal
 
     int linha0 = 0;
@@ -34,8 +40,9 @@ printf("  "); // Espaço inicial para alinhar com os números da lateral
     for (int i = 0; i < 3; i++) {
         tabuleiro[linha0][colunaG + i] = navioHorizontal[i];
     }
+//_________________________________________________________________________________________________________________________
 
-        // Navio 2 Vertical
+    // Navio 2 Vertical
 
     int linha2 = 2;
     int colunaj = 9;
@@ -43,17 +50,21 @@ printf("  "); // Espaço inicial para alinhar com os números da lateral
         tabuleiro[linha2 + i][colunaj] = navioVertical[i];
     }
 
-
+//_________________________________________________________________________________________________________________________
         // Loop para imprimir o tabuleiro com números na lateral
-    for (int i = 0; i < 10; i++) {
-        printf("%d ", i); // número da linha
-        for (int j = 0; j < 10; j++) {
-            printf("%d ", tabuleiro[i][j]);
-            
+
+    for (int i = 0; i < LINHAS; i++) {
+        for( int j = 0; j < COLUNAS; j++){
+
+            soma++;
+            tabuleiro[i][j] = soma;
+            printf ("%d ", tabuleiro[i][j]);
         }
+            
+        
         printf("\n");
     }
-
+//__________________________________________________________________________________________________________________________
 
 
         // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
